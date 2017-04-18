@@ -11,7 +11,7 @@ module.exports = function(grunt) {
   				'main.css': 'main.sass'
   			}
   		}
-  	}
+  	},
   	imagemin: {
   		dynamic: {
   			files: [{
@@ -21,7 +21,7 @@ module.exports = function(grunt) {
   				dest: 'images/build/'
   			}]
   		}
-  	}
+  	},
 	watch: {
     scripts: {
         files: ['*.sass'],
