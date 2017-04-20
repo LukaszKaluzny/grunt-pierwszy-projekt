@@ -2,16 +2,6 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
-  	sass: {
-  		options: {
-  			sourceMap: true
-  		},
-  		dist: {
-  			files: {
-  				'main.css': 'main.sass'
-  			}
-  		}
-  	},
   	imagemin: {
   		dynamic: {
   			files: [{
@@ -22,21 +12,48 @@ module.exports = function(grunt) {
   			}]
   		}
   	},
-	watch: {
-    scripts: {
-        files: ['*.sass'],
-        tasks: ['sass'],
-        options: {
-            spawn: false,
+  	watch: {
+      options: {
+          cwd: '/',
+          spawn: false
+      },
+            files: '*.sass',
+            tasks: ['sass']
         },
-    } 
-}
-  });
+        sass: {
+            dev: {
+                files: {
+                    'main.css': 'main.sass'
+                }
+            }
+        },
+        browserSync: {
+            dev: {
+                bsFiles: {
+                    src : [
+                        '*.css',
+                        '*.html'
+                    ]
+                },
+                options: {
+                    watchTask: true,
+                    watchOptions: { // na Google wyczytałem, że ta opcja również powinna pomóc...
+                      ignored: ''
+                    },
+                    reloadDelay: 2000, //próbowałem też z tą opcją
+                    server: {
+                        baseDir: "./"
+                    }
+                }
+            }
+        }
+    });
+	
   // Load the plugins tasks 
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-browser-sync');
   // Default task(s).
-  grunt.registerTask('default', ['sass', 'imagemin', 'watch']);
+  grunt.registerTask('default', ['browserSync', 'watch', 'sass', 'imagemin']);
 };
