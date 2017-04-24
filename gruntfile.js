@@ -17,13 +17,13 @@ module.exports = function(grunt) {
           cwd: "/",
           spawn: false
       },
-            files: "*.sass",
+            files: "sass/*.sass",
             tasks: ["sass"]
         },
         sass: {
             dev: {
                 files: {
-                    "main.css": "main.sass"
+                    "css/main.css": "sass/main.sass"
                 }
             }
         },
@@ -55,5 +55,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks("grunt-browser-sync");
   // Default task(s).
-  grunt.registerTask("default", ["browserSync", "watch", "sass", "imagemin"]);
+  grunt.registerTask("default", ["browserSync", "sass", "imagemin", "watch"]);
 };
