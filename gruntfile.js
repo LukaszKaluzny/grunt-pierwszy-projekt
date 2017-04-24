@@ -31,16 +31,12 @@ module.exports = function(grunt) {
             dev: {
                 bsFiles: {
                     src : [
-                        "*.css",
+                        "*css/*.css",
                         "*.html"
                     ]
                 },
                 options: {
                     watchTask: true,
-                    watchOptions: { // na Google wyczytałem, że ta opcja również powinna pomóc...
-                      ignored: ''
-                    },
-                    reloadDelay: 2000, //próbowałem też z tą opcją
                     server: {
                         baseDir: "./"
                     }
@@ -55,5 +51,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks("grunt-browser-sync");
   // Default task(s).
-  grunt.registerTask("default", ["browserSync", "sass", "imagemin", "watch"]);
+  grunt.registerTask("default", ["sass", "imagemin", "browserSync", "watch"]);
 };
