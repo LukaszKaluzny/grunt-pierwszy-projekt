@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<p>paragraf</p>
+<h1>Nagłówek pierwszego stopnia</h1>
+<h2>Nagłówek drugiego stopnia</h2>
+=======
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +13,8 @@
 <body>
   <p>paragraf123</p>
   <h1>Nagłówek pierwszego stopnia</h1>
-  <h2>Nagłówek drugiego stopnia</h2>
+  <h2>Nagłówek drugieo stopnia</h2>
 </body>
 </html>
 
+>>>>>>> review

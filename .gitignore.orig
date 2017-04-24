@@ -1,0 +1,8 @@
+node_modules/
+css/
+<<<<<<< HEAD
+images/build/
+=======
+images/build/
+/.idea
+>>>>>>> review
