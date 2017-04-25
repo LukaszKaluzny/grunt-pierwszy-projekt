@@ -1,4 +1,4 @@
 node_modules/
 css/
-build/
-.idea/
+images/build/
+/.idea
